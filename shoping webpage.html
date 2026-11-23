@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>veloura | Premium Fashion</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f7f6f3;
+            color: #171717;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           OFFER BAR
+        ========================= */
+
+        .offer-bar {
+            background: #171717;
+            color: white;
+            text-align: center;
+            padding: 11px 20px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            height: 78px;
+            padding: 0 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #f7f6f3;
+
+            border-bottom: 1px solid #dddcd8;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 34px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 19px;
+        }
+
+        .nav-icons span {
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 680px;
+
+            display: grid;
+            grid-template-columns: 48% 52%;
+
+            background: #eceae5;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 8%;
+        }
+
+        .small-title {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+
+            color: #666;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(55px, 7vw, 105px);
+
+            line-height: 0.9;
+
+            font-weight: 600;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            font-style: italic;
+
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 450px;
+
+            color: #555;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+        .shop-button {
+            width: fit-content;
+
+            padding: 16px 32px;
+
+            background: #171717;
+
+            color: white;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+        .shop-button:hover {
+            background: #444;
+
+            transform: translateY(-2px);
+        }
+
+        /* HERO IMAGE */
+
+        .hero-image {
+            position: relative;
+
+            min-height: 680px;
+
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-label {
+            position: absolute;
+
+            bottom: 30px;
+            right: 30px;
+
+            background: rgba(255,255,255,0.92);
+
+            padding: 15px 20px;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           CATEGORIES
+        ========================= */
+
+        .categories {
+            padding: 35px 6%;
+
+            border-bottom: 1px solid #dddcd8;
+
+            display: flex;
+
+            gap: 15px;
+
+            overflow-x: auto;
+        }
+
+        .category {
+            border: 1px solid #bbb9b4;
+
+            padding: 13px 25px;
+
+            border-radius: 50px;
+
+            white-space: nowrap;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            background: #171717;
+
+            color: white;
+
+            border-color: #171717;
+        }
+
+        /* =========================
+           FEATURED COLLECTION
+        ========================= */
+
+        .featured {
+            padding: 110px 6%;
+        }
+
+        .section-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 52px;
+
+            font-weight: 500;
+        }
+
+        .section-heading p {
+            max-width: 350px;
+
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .featured-grid {
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 25px;
+        }
+
+        .featured-main {
+            position: relative;
+
+            height: 650px;
+
+            overflow: hidden;
+        }
+
+        .featured-main img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .featured-small {
+            display: grid;
+
+            grid-template-rows: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .featured-card {
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.6s ease;
+        }
+
+        .featured-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .featured-overlay {
+            position: absolute;
+
+            left: 25px;
+            bottom: 25px;
+
+            color: white;
+        }
+
+        .featured-overlay h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+
+            margin-bottom: 5px;
+        }
+
+        .featured-overlay p {
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           LOOKBOOK
+        ========================= */
+
+        .lookbook {
+            background: #171717;
+
+            color: white;
+
+            padding: 100px 6%;
+        }
+
+        .lookbook-header {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .lookbook-header small {
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #aaa;
+        }
+
+        .lookbook-header h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 65px;
+
+            font-weight: 500;
+
+            margin-top: 15px;
+        }
+
+        .lookbook-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .lookbook-card {
+            height: 540px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .lookbook-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.7s;
+        }
+
+        .lookbook-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .lookbook-number {
+            position: absolute;
+
+            top: 20px;
+            left: 20px;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            padding: 110px 6%;
+        }
+
+        .products-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-image {
+            height: 430px;
+
+            background: #eee;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.6s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .new-tag {
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            background: white;
+
+            padding: 8px 12px;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            z-index: 2;
+        }
+
+        .product-info {
+            padding-top: 15px;
+        }
+
+        .product-name {
+            font-size: 14px;
+
+            margin-bottom: 7px;
+        }
+
+        .product-price {
+            font-size: 13px;
+
+            color: #666;
+        }
+
+        /* =========================
+           EDITORIAL
+        ========================= */
+
+        .editorial {
+            margin: 0 6% 110px;
+
+            min-height: 500px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .editorial img {
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+        }
+
+        .editorial-content {
+            position: absolute;
+
+            top: 50%;
+            left: 8%;
+
+            transform: translateY(-50%);
+
+            color: white;
+
+            max-width: 430px;
+        }
+
+        .editorial-content small {
+            letter-spacing: 3px;
+
+            font-size: 11px;
+        }
+
+        .editorial-content h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 60px;
+
+            line-height: 1;
+
+            margin: 15px 0 25px;
+        }
+
+        .light-button {
+            display: inline-block;
+
+            padding: 15px 28px;
+
+            background: white;
+
+            color: #171717;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           STORY
+        ========================= */
+
+        .story {
+            padding: 100px 10%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 90px;
+
+            align-items: center;
+        }
+
+        .story-image {
+            height: 600px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .story-content small {
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            color: #777;
+        }
+
+        .story-content h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 55px;
+
+            line-height: 1;
+
+            margin: 20px 0 25px;
+        }
+
+        .story-content p {
+            color: #666;
+
+            line-height: 1.9;
+
+            font-size: 15px;
+
+            margin-bottom: 30px;
+        }
+
+        .text-link {
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            border-bottom: 1px solid #171717;
+
+            padding-bottom: 5px;
+        }
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        .newsletter {
+            background: #e8e5df;
+
+            padding: 80px 6%;
+
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 48px;
+
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            color: #666;
+
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+
+            margin: auto;
+
+            display: flex;
+
+            border-bottom: 1px solid #555;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 15px 0;
+
+            outline: none;
+
+            font-family: inherit;
+        }
+
+        .newsletter-form button {
+            border: none;
+
+            background: transparent;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #171717;
+
+            color: white;
+
+            padding: 70px 6% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: #aaa;
+
+            max-width: 300px;
+
+            line-height: 1.7;
+
+            font-size: 13px;
+        }
+
+        .footer-column h4 {
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            color: #aaa;
+
+            font-size: 13px;
+
+            margin-bottom: 13px;
+
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+
+            padding-top: 25px;
+
+            color: #777;
+
+            font-size: 11px;
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                min-height: 500px;
+            }
+
+            .hero-image {
+                min-height: 600px;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-main {
+                height: 600px;
+            }
+
+            .featured-small {
+                grid-template-columns: 1fr 1fr;
+
+                grid-template-rows: 350px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lookbook-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .offer-bar {
+                font-size: 9px;
+
+                padding: 9px 10px;
+            }
+
+            .navbar {
+                height: 65px;
+
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-icons {
+                gap: 12px;
+
+                font-size: 17px;
+            }
+
+            .hero {
+                display: block;
+            }
+
+            .hero-content {
+                padding: 70px 25px;
+
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-image {
+                min-height: 520px;
+            }
+
+            .hero-label {
+                bottom: 20px;
+
+                right: 20px;
+            }
+
+            .categories {
+                padding: 22px 20px;
+            }
+
+            .featured {
+                padding: 75px 20px;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading h2 {
+                font-size: 42px;
+
+                margin-bottom: 20px;
+            }
+
+            .featured-grid {
+                display: block;
+            }
+
+            .featured-main {
+                height: 500px;
+
+                margin-bottom: 20px;
+            }
+
+            .featured-small {
+                display: block;
+            }
+
+            .featured-card {
+                height: 400px;
+
+                margin-bottom: 20px;
+            }
+
+            .lookbook {
+                padding: 75px 20px;
+            }
+
+            .lookbook-header h2 {
+                font-size: 48px;
+            }
+
+            .lookbook-grid {
+                display: block;
+            }
+
+            .lookbook-card {
+                height: 500px;
+
+                margin-bottom: 20px;
+            }
+
+            .products {
+                padding: 75px 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 12px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .product-name {
+                font-size: 12px;
+            }
+
+            .product-price {
+                font-size: 11px;
+            }
+
+            .editorial {
+                margin: 0 20px 75px;
+            }
+
+            .editorial img {
+                height: 500px;
+            }
+
+            .editorial-content {
+                left: 25px;
+
+                right: 25px;
+            }
+
+            .editorial-content h2 {
+                font-size: 45px;
+            }
+
+            .story {
+                padding: 75px 20px;
+            }
+
+            .story-image {
+                height: 450px;
+            }
+
+            .story-content h2 {
+                font-size: 45px;
+            }
+
+            .newsletter {
+                padding: 65px 20px;
+            }
+
+            .newsletter h2 {
+                font-size: 38px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 35px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .copyright {
+                display: block;
+
+                line-height: 2;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         OFFER BAR
+    ========================= -->
+
+    <div class="offer-bar">
+        Free shipping on orders above ₹2,999 · New season now live
+    </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="#" class="logo">
+            VELVORA
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#new">New In</a>
+
+            <a href="#women">Women</a>
+
+            <a href="#men">Men</a>
+
+            <a href="#lookbook">Lookbook</a>
+
+            <a href="#story">About</a>
+
+        </div>
+
+        <div class="nav-icons">
+
+            <span>⌕</span>
+
+            <span>♡</span>
+
+            <span>🛍</span>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Spring / Summer 2026
+            </div>
+
+            <h1>
+                Wear
+                <span>your story.</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover refined fashion designed for people who
+                don't follow trends — they create their own.
+                Explore our latest collection of timeless silhouettes
+                and modern essentials.
+            </p>
+
+            <a href="#new" class="shop-button">
+                Shop Collection
+            </a>
+
+        </div>
+
+
+        <!-- FIRST IMAGE -->
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1600&q=90"
+                alt="Beautiful fashion model"
+            >
+
+            <div class="hero-label">
+                The New Muse · 01
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================= -->
+
+    <section class="categories">
+
+        <a href="#" class="category">
+            New Arrivals
+        </a>
+
+        <a href="#" class="category">
+            Women
+        </a>
+
+        <a href="#" class="category">
+            Men
+        </a>
+
+        <a href="#" class="category">
+            Dresses
+        </a>
+
+        <a href="#" class="category">
+            Outerwear
+        </a>
+
+        <a href="#" class="category">
+            Accessories
+        </a>
+
+        <a href="#" class="category">
+            Sale
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED COLLECTION
+    ========================= -->
+
+    <section class="featured" id="women">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="small-title">
+                    Curated for you
+                </div>
+
+                <h2>
+                    The Edit
+                </h2>
+
+            </div>
+
+            <p>
+                Carefully selected pieces designed to become
+                your everyday statement.
+            </p>
+
+        </div>
+
+
+        <div class="featured-grid">
+
+            <!-- LARGE FEATURED IMAGE -->
+
+            <div class="featured-main">
+
+                <img
+                    src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=90"
+                    alt="Modern fashion collection"
+                >
+
+                <div class="featured-overlay">
+
+                    <h3>
+                        Modern Muse
+                    </h3>
+
+                    <p>
+                        Explore the collection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SMALL FEATURED IMAGES -->
+
+            <div class="featured-small">
+
+                <!-- FIRST SMALL IMAGE -->
+
+                <div class="featured-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90"
+                        alt="Women's fashion model"
+                    >
+
+                    <div class="featured-overlay">
+
+                        <h3>
+                            Soft Power
+                        </h3>
+
+                        <p>
+                            Women's collection
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECOND SMALL IMAGE - CORRECTED -->
+
+                <div class="featured-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=90"
+                        alt="Elegant fashion model"
+                    >
+
+                    <div class="featured-overlay">
+
+                        <h3>
+                            After Dark
+                        </h3>
+
+                        <p>
+                            Evening edit
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LOOKBOOK
+    ========================= -->
+
+    <section class="lookbook" id="lookbook">
+
+        <div class="lookbook-header">
+
+            <small>
+                VELVORA / LOOKBOOK
+            </small>
+
+            <h2>
+                City After Hours
+            </h2>
+
+        </div>
+
+
+        <div class="lookbook-grid">
+
+            <div class="lookbook-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fashion look"
+                >
+
+                <span class="lookbook-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="lookbook-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fashion shopping"
+                >
+
+                <span class="lookbook-number">
+                    02
+                </span>
+
+            </div>
+
+
+            <div class="lookbook-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=90"
+                    alt="Street fashion"
+                >
+
+                <span class="lookbook-number">
+                    03
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEW ARRIVALS
+    ========================= -->
+
+    <section class="products" id="new">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="small-title">
+                    Just dropped
+                </div>
+
+                <h2>
+                    New Arrivals
+                </h2>
+
+            </div>
+
+            <a href="#" class="text-link">
+                View all
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="new-tag">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=90"
+                        alt="Women's fashion outfit"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        Sculpted Blazer
+                    </div>
+
+                    <div class="product-price">
+                        ₹4,999
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="new-tag">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=90"
+                        alt="Fashion dress"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        Satin Evening Dress
+                    </div>
+
+                    <div class="product-price">
+                        ₹3,799
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="new-tag">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=90"
+                        alt="Modern fashion outfit"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        Relaxed Tailoring Set
+                    </div>
+
+                    <div class="product-price">
+                        ₹5,499
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="new-tag">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
+                        alt="Premium fashion outfit"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        Signature Trench
+                    </div>
+
+                    <div class="product-price">
+                        ₹6,299
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDITORIAL BANNER
+    ========================= -->
+
+    <section class="editorial">
+
+        <img
+            src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1800&q=90"
+            alt="Fashion editorial"
+        >
+
+        <div class="editorial-content">
+
+            <small>
+                THE VELVORA JOURNAL
+            </small>
+
+            <h2>
+                Style is not what you wear.
+                It's how you feel.
+            </h2>
+
+            <a href="#" class="light-button">
+                Read the story
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BRAND STORY
+    ========================= -->
+
+    <section class="story" id="story">
+
+        <div class="story-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=90"
+                alt="Fashion lifestyle"
+            >
+
+        </div>
+
+
+        <div class="story-content">
+
+            <small>
+                OUR PHILOSOPHY
+            </small>
+
+            <h2>
+                Less trend.
+                More you.
+            </h2>
+
+            <p>
+                VELVORA was created for those who believe fashion
+                should feel personal. We combine contemporary
+                design with timeless silhouettes to create pieces
+                that stay relevant beyond a single season.
+            </p>
+
+            <p>
+                Every collection is designed with confidence,
+                simplicity and individuality at its core.
+            </p>
+
+            <a href="#" class="text-link">
+                Discover VELVORA
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEWSLETTER
+    ========================= -->
+
+    <section class="newsletter">
+
+        <h2>
+            Stay in the know.
+        </h2>
+
+        <p>
+            New collections, exclusive drops and style stories.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Your email address"
+            >
+
+            <button type="submit">
+                JOIN
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <h2>
+                    VELVORA
+                </h2>
+
+                <p>
+                    Contemporary fashion for people who
+                    define their own style.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Shop
+                </h4>
+
+                <a href="#">New Arrivals</a>
+
+                <a href="#">Women</a>
+
+                <a href="#">Men</a>
+
+                <a href="#">Accessories</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Help
+                </h4>
+
+                <a href="#">Contact</a>
+
+                <a href="#">Shipping</a>
+
+                <a href="#">Returns</a>
+
+                <a href="#">FAQ</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Follow
+                </h4>
+
+                <a href="#">Instagram</a>
+
+                <a href="#">Pinterest</a>
+
+                <a href="#">Facebook</a>
+
+                <a href="#">YouTube</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 VELVORA. All rights reserved.
+            </span>
+
+            <span>
+                Made for modern style.
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
